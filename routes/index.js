@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-require('../config/db');
+ const { Product } = require('../config/db');
+  
+  router.get('/products/:id', async (req, res) => {
+    const prod = await Product.findByPk(1)
+    console.log(prod)
+    res.send(prod)
+  });
 
 /* GET home page. */
   router.get('/', function(req, res, next) {

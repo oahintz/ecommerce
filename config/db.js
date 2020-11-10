@@ -1,6 +1,7 @@
 const  Sequelize  = require('sequelize');
 
 const ProductModel = require('../models/product');
+const UserModel = require('../models/user');
 
 
 const sequelize = new Sequelize('ecommerce_development', 'alexis', '1234', {
@@ -9,7 +10,7 @@ const sequelize = new Sequelize('ecommerce_development', 'alexis', '1234', {
 });
 
 const Product = ProductModel(sequelize, Sequelize);
-
+const User = UserModel(sequelize, Sequelize);
 
 sequelize.sync({  force: false  })
     .then(() =>{
@@ -19,5 +20,5 @@ sequelize.sync({  force: false  })
 
 module.exports = {
     Product,
-    
+    User,
 }

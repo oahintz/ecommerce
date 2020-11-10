@@ -1,7 +1,7 @@
 const sequelize = require("../config/db");
 
 module.exports = (sequelize, type) => {
-    return sequelize.define('product', {
+    return sequelize.define('Product', {
         title: type.STRING,
         description: type.STRING,
         imageUrl: type.STRING,
