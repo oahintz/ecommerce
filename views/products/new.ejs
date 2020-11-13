@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Sapphire</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,21 +20,35 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Ofertas</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Catalogo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Ropa</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Electronica</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Inmuebles</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Libros</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">¡No encuentro lo que busco!</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mi cuenta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Comprar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vender</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -46,32 +60,41 @@
         </form>
       </div>
     </nav>
-    <a href="/search?q=elefantes">Búsqueda de elefantes</a>
-    <a href="/search?q=ratas">Búsqueda de ratas</a>
+    <!-- <a href="/search?q=elefantes">Búsqueda de elefantes</a>
+    <a href="/search?q=ratas"></a> -->
     <div class="container-fluid">
       <div class="row mt-5">
-        <form action="/new" method="GET">
-          <div class="form-group">
-            <div class="col col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
-              <label for="registername">Ingrese su nombre</label>
-              <input type="text" class="form-control" placeholder="Nombre" name="registername">
-              <label for="registersurname">Ingrese su apellido</label>
-              <input type="text" class="form-control" placeholder="Apellido" name="registersurname">
-               <label for="location">Provincia</label>
-              <select class="form-control" name="location">
-                <option>Buenos Aires</option>
-                <option>Córdoba</option>
-                <option>Tucumán</option>
-              </select>
-              <label for="dni">DNI</label>
-              <input type="text" class="form-control" placeholder="Ingrese su DNI" name="dni">
-                <button type="submit" class="btn btn-primary">Registrar</button>
-              </div>
+        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 py-3" style="background:grey;">
+          <form action="/products" method="POST">
+            <div>
+              <h4>Agregar producto</h4>
+              <p>¡rellena el formulario para poder publicar lo que quieras vender!</p>
             </div>
-          </div>  
-        </form>
-      </div>
-    </div>
+  
+            <div class="form-group">
+              <label for="productName">Nombre del producto:</label>
+              <input type="text" class="form-control" placeholder="" name="productName">
+            </div>
+                
+            <div class="form-group">
+              <label for="productStatus">Su producto es:</label>
+              <select class="form-control" name="productStatus">
+                <option>Nuevo</option>
+                <option>Usado</option>
+                <option>Reparado</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+                <label for="productDescription">Descripción del producto</label>
+                <textarea class="form-control" name="productDescription" rows="3"></textarea>
+            </div>
+  
+            <button type="submit" class="btn btn-primary">Publicar</button>
+          </form>
+        </div>
+      </div> <!-- ESTE ES EL CLASS ROW-->
+    </div> <!--FIN CONTAINER-FLUID -->
 <!-- <div class="row mt-5">
         <div class="col col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
           <form action="/" method="POST">
