@@ -1,27 +1,23 @@
-const Sequelize = require('sequelize');
-
-const ProductModel = require('../models/product');
-const UserModel = require('../models/user');
-
-const sequelize = new Sequelize(
-  process.env['DB_NAME'],
-  process.env['DB_USER'],
-  process.env['DB_PASS'],
-  {
-    host: process.env['DB_HOST'],
-    dialect: 'mysql'
-  }
-);
-
-const Product = ProductModel(sequelize, Sequelize);
-const User = UserModel(sequelize, Sequelize);
-
-sequelize.sync({ force: false })
-  .then(() => {
-    console.log('db sync completed');
-  });
-
 module.exports = {
-  Product,
-  User,
-};
+  "development": {
+    "username": process.env['DB_USER'],
+    "password": process.env['DB_PASS'],
+    "database": process.env['DB_NAME'],
+    "host": process.env['DB_HOST'],
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

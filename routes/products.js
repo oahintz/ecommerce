@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { Product } = require('../config/db');
+const { Product } = require('../models');
 
 // PRODUCT INDEX
 
