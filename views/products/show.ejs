@@ -1,0 +1,20 @@
+<%- include("../header.ejs", { title: "Producto"}) %>
+
+
+<div class="row" style="border: solid yellow 1px;">
+    <div class="col-6 offset-lg-3" style="border: solid red 1px;">
+      <img src="<%= product.imageUrl %>" class="" alt="...">
+      <div class="">
+        <h5 class="" ><%= product.title %></h5>
+        <p class="card-text"><%= product.description %></p>
+        <p class="card-text"><small class="text-muted"></small></p>
+        <a href="/products/<%= product.id %>/edit" class="btn btn-primary">Editar</a>
+        <form action="/products/<%= product.id %>/delete" method="POST">
+          <input type="submit" class="btn btn-danger" value="Borrar" onclick="confirm('¿Está seguro que desea eliminar el producto?')">
+        </form> 
+      </div>
+    </div>    
+</div>
+
+
+<%- include("../footer.ejs") %>

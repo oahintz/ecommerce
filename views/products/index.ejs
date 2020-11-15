@@ -1,0 +1,18 @@
+<%- include("../header.ejs", { title: "Productos"}) %>
+<div class="container-fluid">
+    <div class="row mt-5 mb-3">
+        <% for (let i=0; i<products.length; i++) { %> 
+            <div class="col-3">
+                <div class="card">
+                    <img src="<%= products[i].imageUrl %>" class="card-img-top" style="max-height: 200px;" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= products[i].title.substring(0,30) %></h5>
+                        <p class="card-text ellipsis" ><%= products[i].description %></p>
+                        <a href="/products/<%= products[i].id %>" class="btn btn-primary">Detalles</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+<%- include("../footer.ejs") %>
